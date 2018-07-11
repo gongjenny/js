@@ -1,0 +1,60 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <title>Document</title>
+ </head>
+ <body>
+    <div id="div1">
+        <a href="#">取消</a> 
+        <a href="#">取消</a> 
+        <a href="#">取消</a> 
+        <a href="#">取消</a> 
+        <a href="#">取消</a> 
+        <a href="#">取消</a> 
+    </div>
+    <p class="p1">dianji</p>
+ </body>
+ <script src="./jq.js"></script>
+ <script>
+$(function(){
+    //代理
+    var div1 = document.getElementById('div1');
+    // bindEvent(div1, 'click', 'a', function(e){
+    //     e.stopPropagation();
+    //     console.log('click');
+    // })
+    //不是代理
+     bindEvent(div1,'click',function (e){
+        console.log('click');
+     })
+})
+
+function bindEvent(elm,type,selector,fn){
+    if(fn == null){//即不是代理的情况，只传3个值
+        fn = selector; //把selector的值赋给fn
+        selector = null; //把selector的值设置为null，即没有这个参数
+    }
+    //console.log(elm,type,selector,fn);
+    elm.addEventListener(type, function(e){
+        var target ;
+        if(selector){ // 代理
+            target = e.target;
+            if(target.matches(selector)){
+                fn.call(target, e);
+                //fn.call(selector, e);上边和这个都可以，但是上边更严谨
+            }
+        }else{
+            (fn)(e)// 此处为调用fn函数。  
+        }
+    })
+}
+ </script>
+ <script>
+//  function (a) {
+//      console.log(a)
+//  }(1)
+ </script>
+ </html>
