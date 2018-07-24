@@ -5,13 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .p {
+            width: 500px;
+            height: 500px;
+            border: 1px solid red;
+        }
+        
+        .c {
+            width: 200px;
+            height: 200px;
+            border: 1px solid green;
+            /*relative 定位*/
+            position: relative;
+            /*top和left偏移各为50%*/
+            top: 50%;
+            left: 50%;
+            /*translate(-50%,-50%) 偏移自身的宽和高的-50%*/
+            transform: translate(-50%, -50%);
+        }
+    </style>
 </head>
 <body>
-    <div>div</div>
-    <input type="text">
-    <span>span</span>
-    <a href="">a</a>
-    <b>b</b>
+    <div class="p">
+        <div class="c">
+            子元素
+        </div>
+    </div>
 </body>
 <script src="./jq.js"></script>
 <script>

@@ -11,11 +11,22 @@
 </body>
 <script src="./jq.js"></script>
 <script>
-    //slice  从数组中返回选定的元素
+    //slice  返回从数组中选定的元素, 或者返回从字符串中选定的元素
     var arr = ['i','l','o','v','e'];
     var arr1 = arr.slice(0,2); // 选取下标为0,1的值
     console.log(arr1);// ['i','l']
     console.log(arr);// ['i','l','o','v','e']
+
+    var str = 'iloveu';
+    var str1 = str.slice(0,2);
+    console.log(str1);
+    console.log(str);
+
+    //concat
+    var ab = 'cat'
+    console.log(arr.concat(1,2,3)) // ['i','l','o','v','e',1,2,3];
+    console.log(str.concat('abc')) // iloveuabc
+    console.log(str.concat('abc',ab)) // iloveuabccat
 
 </script>
 </html>

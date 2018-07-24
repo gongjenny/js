@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+//1、concat(),将两个或多个字符的文本组合起来，返回一个新的字符串。
+//2、indexOf(), 返回一个子串在字符串中第一次出现的索引，如果没有匹配项，返回-1。
+//3、charAt(),返回指定位置的字符。
+</script>
+<script>
+    var str = 'how are you'
+    var arr = ['i','am','fine']
+
+    //1、concat(),将两个或多个字符的文本组合起来，返回一个新的字符串。
+    str.concat('?')// how are you?
+    arr.concat('and','u')// ["i", "am", "fine", "and", "u"]
+
+    //2、indexOf(),返回一个子串在字符串中第一次出现的索引，如果没有匹配项，返回-1。
+    str.indexOf('o') // 1
+    arr.indexOf('am') // 1
+
+    //3、charAt(),返回指定位置的字符。
+    str.charAt(0)// 'h'
+    arr.charAt(0)// 报错
+
+    //4、lastIndexOf(),返回一个子串字符串中最后一处出现的索引，如果没有匹配项，返回 -1 。
+    str.lastIndexOf('o') // 9
+    arr.lastIndexOf('am') // 1
+
+    //5、match() 检查一个字符串是否匹配一个正则表达式,返回一个数组
+    str.match(/o/g) // ["o", "o"]
+    arr.match(/m/g) // 报错
+
+    //6、substr()
+
+
+</script>
+</html>
