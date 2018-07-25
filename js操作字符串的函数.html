@@ -28,7 +28,7 @@
 
     //3、charAt(),返回指定位置的字符。
     str.charAt(0)// 'h'
-    arr.charAt(0)// 报错
+    //arr.charAt(0)// 报错
 
     //4、lastIndexOf(),返回一个子串字符串中最后一处出现的索引，如果没有匹配项，返回 -1 。
     str.lastIndexOf('o') // 9
@@ -36,10 +36,17 @@
 
     //5、match() 检查一个字符串是否匹配一个正则表达式,返回一个数组
     str.match(/o/g) // ["o", "o"]
-    arr.match(/m/g) // 报错
+    //arr.match(/m/g) // 报错
 
-    //6、substr()
+    //6、substr()  抽取从 start 下标开始的指定数目的字符。str.substr(start,length)
+    str.substr(0,2)// "ho" ， 从index=0，开始截取，截取长度为2
+    //arr.substr(0,2)// 报错
 
+    //7、substring()  提取字符串中介于两个指定下标之间的字符。str.substring(start,stop)
+    str.substring(0,3) // "how" , 返回下标是 0,1,2 的字符串
+    //arr.substring(0,3) // 报错
 
+    //8、search() 检索字符串中指定的子字符串，或检索与正则表达式相匹配的子字符串。
+    str.search(/how/) //0, 返回匹配的第一个字符下标。
 </script>
 </html>
