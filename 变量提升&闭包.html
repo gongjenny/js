@@ -11,32 +11,32 @@
 </body>
 <script src="./jq.js"></script>
 <script>
-    // var a = 100 // 全局变量
-    // fn()
-    // function fn(){
-    //     var b = 200; // 函数体内全局变量
-    //     c = 400; // 全局变量
-    //      console.log(a);
-    //      console.log(b)
-    // }
-    // console.log(300)
+    var a = 100 // 全局变量
+    fn1()
+    function fn1(){
+        var b = 200; // 函数体内全局变量
+        c = 400; // 全局变量
+         console.log(a);
+         console.log(b)
+    }
+    console.log(300)
     // //打印: 100 200 300 
 
 
 
     // // 哪个作用域定义了这个函数，这个函数的父级作用域就是谁，跟函数执行没有关系
-    // var e = 100;
-    // function F1(){
-    //     var f = 200 
-    //     function F2(){
-    //         var g = 300
-    //         console.log(e);
-    //         console.log(f);
-    //         console.log(g);
-    //     }
-    //     F2();
-    // }
-    // F1()
+    var e = 100;
+    function F1(){
+        var f = 200 
+        function F2(){
+            var g = 300
+            console.log(e);
+            console.log(f);
+            console.log(g);
+        }
+        F2();
+    }
+    F1()
 
     // 闭包
     //1、函数作为返回值
@@ -53,6 +53,28 @@
         fn() //fn执行的时候，h是自由变量，要去父作用域寻找，就是函数声明定义的函数，是它的父作用域，而不是执行的作用域
     }
     F4(f3); //100
+
+// 闭包的使用
+var i;
+for(i=0;i<=9; i++ ){
+    //每次循环的时候，都会生成一个function，把 i 传进去作为这个函数的变量。
+    (function(i){
+       var a = document.createElement('a');
+        a.innerHTML = i + '<br>';
+        a.addEventListener('click',function(e){
+            e.preventDefault();
+            alert(i); // 自由变量，去父作用域找i的值
+        })
+        document.body.appendChild(a);
+    })(i)
+}
+
+//如何理解作用域？
+//1、 自由变量：如果在某个作用域中使用了变量“a”，而变量“a”并未在该作用域中声明（在其它作用域中声明了），则该变量“a”即为自由变量。
+//2、 作用域链：即自由变量的寻找
+//3、 闭包的两个场景
+
+
 
 </script>
 </html>
