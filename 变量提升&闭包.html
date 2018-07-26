@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script src="./jq.js"></script>
+<script>
+    // var a = 100 // 全局变量
+    // fn()
+    // function fn(){
+    //     var b = 200; // 函数体内全局变量
+    //     c = 400; // 全局变量
+    //      console.log(a);
+    //      console.log(b)
+    // }
+    // console.log(300)
+    // //打印: 100 200 300 
+
+
+
+    // // 哪个作用域定义了这个函数，这个函数的父级作用域就是谁，跟函数执行没有关系
+    // var e = 100;
+    // function F1(){
+    //     var f = 200 
+    //     function F2(){
+    //         var g = 300
+    //         console.log(e);
+    //         console.log(f);
+    //         console.log(g);
+    //     }
+    //     F2();
+    // }
+    // F1()
+
+    // 闭包
+    //1、函数作为返回值
+    //2、函数作为参数来传递
+    function F3(){
+        var h = 100;
+        return function () {
+            console.log(h)   // 自由变量，父作用域寻找
+        }
+    }
+    var f3 = F3();
+    function F4(fn){
+        var h = 200; // 这个h=200  和 上边的 h=100是两回事
+        fn() //fn执行的时候，h是自由变量，要去父作用域寻找，就是函数声明定义的函数，是它的父作用域，而不是执行的作用域
+    }
+    F4(f3); //100
+
+</script>
+</html>
