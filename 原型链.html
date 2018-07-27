@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <img src="./img/img.png" alt="">
+</body>
+<script src="./jq.js"></script>
+<script>
+// new 一个新对象的过程
+// 1、创建一个新对象
+// 2、this指向这个新对象
+// 3、执行代码，即对this赋值
+// 4、返回this
+function Foo(name,age){ 
+    this.name = name;
+    this.age = age;
+    //return this //默认有这一行,写不写都可以
+}
+var f = new Foo('zhangdan',20)
+// Foo是构造函数， f是实例对象， f._proto_ === Foo.Prototype
+
+
+
+
+// 原型规则例子：
+var obj={}; obj.a = 100;
+var arr=[]; arr.a = 100;
+function fn(){}
+fn.a = 100;
+
+console.log(obj._proto_);//_proto_是隐式原型
+console.log(arr._proto_);
+console.log(fn._proto_);
+
+console.log(fn.prototype);
+console.log(obj._proto_ === Object.prototype)
+
+// 原型规则
+// 1、所有的引用类型（数组、对象、函数），都具有对象特性，即可自由扩展属性（除了'null'以外）
+// 2、所有的引用类型（数组、对象、函数），都有一个_proto_ 属性，属性值是一个普通对象
+// 3、当试图得到一个对象的某个属性时，如果这个对象本身没有这个属性，那么会去它的_proto_(即它的构造函数的prototype)中寻找
+console.log(obj._proto_ === Object.prototype)
+
+
+
+
+
+//原型链继承的例子(面试中不要这么写)
+function Animal(){
+    this.eat = function(){
+        console.log('animal eat')
+    }
+}
+//狗
+function Dog(){
+    this.bark = function(){
+        console.log('dog bark')
+    }
+}
+Dog.prototype = new Animal()
+//哈士奇
+var hashiqi = new Dog()
+
+
+ 
+
+
+</script>
+</html>
