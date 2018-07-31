@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+<script src="./jq.js"></script>
+<script>
+    // 闭包
+    // 1.函数作为返回值
+    // 2、函数作为参数来传递
+</script>
+<script>
+    //闭包的第一种形式
+    function F1(){
+        var a = 100;
+        return function(){
+            console.log(a)// 自由变量，寻找父作用域
+        }
+    }
+    var f1 = F1()
+    var a = 200
+    f1() //100
+</script>
+<script>
+    // 闭包的第一种形式
+    function F1(){
+        var a = 100;
+        return function(){
+            console.log(a); // 自由变量，寻找父作用域
+        }
+    }
+    var f1 = F1()
+    function F2(fn){
+        var a = 200
+        fn()
+    }
+    F2(f1);
+
+</script>
+</html>
