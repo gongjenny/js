@@ -24,7 +24,9 @@ function Foo(name,age){
 var f = new Foo('zhangdan',20)
 // Foo是构造函数， f是实例对象， f._proto_ === Foo.Prototype
 
-
+//语法糖
+// var obj={} 是 var obj = new Object() 的语法糖
+// var arr =[] 是 var arr = new Array() 的语法糖
 
 
 // 原型规则例子：
@@ -65,6 +67,13 @@ function Dog(){
 Dog.prototype = new Animal()
 //哈士奇
 var hashiqi = new Dog()
+
+
+
+// prototype 和  _proto_ 的区别
+prototype是函数才有的属性
+_proto_([[prototype]])是每个对象都有的属性。
+
 
 
  

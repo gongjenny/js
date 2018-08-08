@@ -40,6 +40,18 @@
 </body>
 <script src="./jq.js"></script>
 <script>
+    function Parent(name){
+        this.name = name
+    }
 
+    Parent.prototype.say = function(){
+        console.log(this.name)
+    } 
+
+    var child = new Parent('san')
+    child.say();
+    console.log(Parent) // 只是一个普通函数，如果是要new的话，就是构造函数了 
+    console.log(Parent.prototype); //里面有say方法，constructor，_proto_
+    console.log(child); // 继承父类属性name，还有一个自带的_proto_
 </script>
 </html>
