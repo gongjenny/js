@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        二、图片的水平垂直居中：
+           1、水平居中：
+              1-1)、给img设display:inline-block;然后父级text-align：center；
+              1-2)、给img设display:block; 同时设margin: 0 auto;
+           2、垂直居中：
+              2-1)、img父级display:table-cell; vertical:middle; height:xxx;
+              2-2)、定位 + transform: translate(-50%,-50%);
+              2-3)、定位 + margin：auto；
+              2-4)、父级display：table; + 包裹img的元素(<span>)设为display：table-cell;
+              2-5)、background-position：center center实现
+              2-6)、父级line-height == height + 行内标签配合<img>
+
+     -->
+    <!-- 2-1 -->
+    <div style="display: table-cell;width:400px;height:300px;vertical-align: middle;text-align:center;background:#999;">
+        <img src="./img/img.png"  width=150 height=150 alt="" />
+    </div>
+
+    <!-- 2-2 -->
+    <div style="position:relative;width:400px;height:300px;text-align:center;background:#999;">
+        <img src="./img/img.png"  width=150 height=150 style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);" />
+    </div>
+
+    <!-- 2-3 -->
+    <div style="position:relative;width:400px;height:300px;text-align:center;background:#999;">
+        <img src="./img/img.png"  width=150 height=150 style="position:absolute;top:0;bottom:0;left:0;right:0;margin:auto;" />
+    </div>
+
+    <!-- 2-4 -->
+    <div style="display:table;width:400px;height:300px;text-align:center;background:#999;">
+        <span style="display:table-cell;vertical-align:middle;">
+            <img src="./img/img.png"  width=150 height=150 />
+        </span>
+    </div>
+
+    <!-- 2-5 -->
+    <div style="width:500px;height:300px;background:#999 url(./img/img.png) no-repeat center center;"></div> 
+
+    <!-- 2-6 -->
+    <div style="width:500px;height:300px;line-height:300px;background:#999;font-size:0;vertical-align:middle;text-align:center;">
+        <a style="display:inline-block;width:0;">哪怕我里面有一个字符都行</a>
+        <img src="./img/img.png" width=150 height=150 style="vertical-align:middle;"/>
+    </div>
+</body>
+</html>
