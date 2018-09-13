@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+   <!-- 
+       一、文本的水平垂直居中：
+           1、水平居中：text-align
+           2、垂直居中：分五种情况：
+              2-1)、单行文本：height 和 line-height
+              2-2)、多行文本：分五种情况
+                    2-2-1)、高度固定，没有嵌套标签 ：display:tabel-cell; vertical-align:middle;
+                    2-2-2)、父级高度固定，嵌套行内元素：父级:diaplay:tabel; 子集：display:tabel-cell; vertical-align:middle;
+                    2-2-3)、父级高度固定，嵌套块级元素且该元素高确定：定位(top:50%) + margin-top：负值；
+                    2-2-4)、父级高度固定，嵌套块级元素且该元素高不确定：定位(top:50%) + transform：translateY(-50%);
+                    2-2-5)、父子均 定宽 定高  (水平垂直居中):定位 + margin：auto；
+   -->
+
+    <!-- 2-1 -->
+    <div class="div1" style="text-align:center;height:100px;line-height:100px">
+        有且仅占有一行的情况下垂直居中
+    </div>
+
+    <!-- 2-2-1 -->
+    <div style="text-align:center; height:300px;width:200px;vertical-align:middle;display:table-cell;  word-break:break-all;background:#666;">
+        ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
+    </div>
+
+    <!-- 2-2-2 -->
+    <div style="text-align:center;height:300px;width:200px;display:table;word-break:break-all;background:#666;">
+        <span style="display:table-cell;vertical-align:middle;">
+            ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
+        </span>
+    </div>
+
+    <!-- 2-2-3 -->
+    <div style="text-align:center;height:300px;width:200px;position:relative;word-break:break-all;background:#666;">
+        <p style="position:absolute;top:50%;left:0;height:80px;margin-top:-40px;background:red;">
+            ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
+        </p>
+    </div>
+
+    <!-- 2-2-4 -->
+    <div style="text-align:center;height:300px;width:200px;position:relative; word-break:break-all;background:#666;">
+        <!-- transform:translateY(-50%); 让p沿Y轴平移自身高度的一半 -->
+        <p style="position:absolute;top:50%;left:0;transform:translateY(-50%);">
+            ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
+        </p>
+    </div>
+
+    <!-- 2-2-5 -->
+    <div style="height:300px;width:400px;position:relative;word-break:break-all;background:#666;">
+        <p style="position:absolute;top:0;bottom:0;right:0;left:0;margin:auto;height:80px;width:200px;background:red;">ddddddddddddddddddddddddddddddddddd</p>  
+    </div>
+</body>
+</html>

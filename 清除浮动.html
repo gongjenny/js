@@ -1,0 +1,48 @@
+<!DOCTYPE doc>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        ul li{
+            float: left;
+        }
+        /* 第一种 */
+        /* .div1{
+            zoom: 1
+        }
+        .div1::after{
+            display:block;
+            clear:both;
+            content:"";
+            visibility:hidden;
+            height:0
+        } */
+
+        /* 第二种 */
+        /* .div1{
+            height: 500px;
+        } */
+
+        /* 第三种 */
+        .div1{
+            overflow: hidden;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="div1">
+        <ul>
+            <li>12</li>
+            <li>13</li>
+            <li>14</li>
+            <li>15</li>
+            <li>16</li>
+        </ul>
+    </div>
+    <div>aaaas</div>
+</body>
+</html>
