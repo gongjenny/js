@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // 一只猴子摘了一堆桃，每天吃一半再加1个，第10天去吃时 只剩1个桃，问第一天的一堆桃有多少？
+    // 倒着计算，一共循环9次，每次计算完，就赋值给上一个变量，最后计算第一天有多少个桃子，
+    function sum(){
+        var s = 1 ;
+        for(var i=9;i>0;i--){
+                s = 2*(s+1);  
+        }
+        console.log(s);
+    }
+    sum();
+</script>
+</html>
